@@ -1,4 +1,8 @@
-'use strict'
+function errorTip (obj, upType, backType) {
+  if (process.env.NODE_ENV !== 'production') {
+    console.warn('类型不服合!', obj, '实际=', upType, '预期=', backType)
+  }
+}
 
 function diffCatch (value, defaultValue) {
   if (value === undefined) return defaultValue
@@ -35,13 +39,4 @@ function diffCatch (value, defaultValue) {
   return defaultValue
 }
 
-function errorTip (obj, upType, backType) {
-  if (process.env.NODE_ENV !== 'production') {
-    console.warn('类型不服合!', obj, '实际=', upType, '预期=', backType)
-  }
-}
-
-module.exports = diffCatch
-
-// Allow use of default import syntax in TypeScript
-module.exports.default = diffCatch
+export default diffCatch

@@ -1,5 +1,5 @@
-import diffCatch from './diffCatch/diffCatch'
+import diffCatch from './diffCatch'
 
-export default function (value) {
-  return (defaultValue) => diffCatch(value, defaultValue)
+export default {
+  diffCatch
 }

@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/diffCatch/index.js":
+/*!********************************!*\
+  !*** ./src/diffCatch/index.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction errorTip(obj, upType, backType) {\n  if (true) {\n    console.warn('类型不服合!', obj, '实际=', upType, '预期=', backType);\n  }\n}\n\nfunction diffCatch(value, defaultValue) {\n  if (value === undefined) return defaultValue;\n\n  var upType = _typeof(value);\n\n  var backType = _typeof(defaultValue);\n\n  if (backType === 'object') {\n    // 复杂类型\n    if (upType !== 'object') {\n      errorTip(value, upType, backType);\n      return defaultValue;\n    }\n\n    var type1 = Object.prototype.toString.call(defaultValue);\n    var type2 = Object.prototype.toString.call(value);\n\n    if (type1 === type2) {\n      if (type2 === '[object Object]') {\n        return Object.entries(defaultValue).reduce(function (init, arr) {\n          init[arr[0]] = diffCatch(init[arr[0]], arr[1]);\n          return init;\n        }, _objectSpread({}, value));\n      }\n\n      return value;\n    } // errorTip(value, type2, type1)\n\n\n    return defaultValue;\n  }\n\n  if (backType === upType) {\n    return value;\n  }\n\n  if (backType === 'number' && upType === 'string') {\n    // errorTip(value, upType, backType)\n    return value && parseFloat(value) || defaultValue;\n  }\n\n  errorTip(value, upType, backType);\n  return defaultValue;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (diffCatch);\n\n//# sourceURL=webpack:///./src/diffCatch/index.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _diffCatch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./diffCatch */ \"./src/diffCatch/index.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  diffCatch: _diffCatch__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
