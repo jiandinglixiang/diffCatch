@@ -1,5 +1,5 @@
 {
-  "name": "my-util",
+  "name": "my-tools",
   "version": "1.0.1",
   "description": "检测参数类型并设置默认值",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jiandinglixiang/my-util.git"
+    "url": "https://github.com/jiandinglixiang/my-tools.git"
   },
   "keywords": [
     "type",
