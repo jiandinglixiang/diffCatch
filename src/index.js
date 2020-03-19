@@ -1,5 +1,1 @@
-import diffCatch from './diffCatch'
-
-export default {
-  diffCatch
-}
+export { default as diffCatch } from './diffCatch/index'
