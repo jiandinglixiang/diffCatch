@@ -35,7 +35,7 @@
 //   }
 //   return defaultValue
 // }
-
+// 12312312312
 function eq (value1, value2) {
   const [type, backType] = [typeof value1, typeof value2]
   if (backType !== 'object') {
